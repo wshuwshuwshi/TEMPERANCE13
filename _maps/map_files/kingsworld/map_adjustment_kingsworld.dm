@@ -14,5 +14,7 @@
 	tutorial_adjust = list(
 	)
 	blacklist = list(
+		/datum/job/roguetown/stationmaster,
+		/datum/job/roguetown/enforcer,
 		/datum/job/roguetown/panpsychist,
 	)
