@@ -235,20 +235,29 @@
 #define TUORO (1<<5)
 #define PAFANTO (1<<6) //heavy weapon technician - melee weapon and machine gun
 #define MULO (1<<7) // heavy weapon ammo bearer - stripped down soldato gear and ammo storage
-#define SERVISTO (1<<8) //support role - can probably shit meds out the wazoo 
+#define SERVISTO (1<<8) //support role - can probably shit meds out the wazoo
 #define CURACISTO (1<<9)
 #define CAMPFOLLOWER (1<<10)
 #define CONSULO (1<<11)
 #define FLAMSOLDATO (1<<12)
 
 #define KINGSROW (1<<14)
-
+//Kingsworld
 #define HIERARCH (1<<0)
 #define BULWARK (1<<2)
 #define PROVISIONER (1<<3)
 #define MORTICIAN (1<<4)
 #define TOWNER (1<<5)
 #define BARKEEP (1<<6)
+
+//Chaobi
+#define STATIONMASTER (1<<7) //Boss of the train depot. Flop your hog around, king
+#define ENFORCER (1<<8) //Stationmaster's top guy(s?). Kill anyone who would challenge your boss
+#define DISPATCHER (1<<9) //Controls and directs train traffic. Provisioner """equiv"""
+#define INNKEEP (1<<10) //Use what supplies you can get to keep people happy.
+#define PANPSYCHIST (1<<11) //Arcane Witch Doctor. Religious leader.
+#define MENDICANT (1<<12) //Support roles. Religious motivated. Own nothing. Be the assistant stand-in for RT.
+#define HUNTER (1<<13)) //Explorers. """Combat""" oriented role to explore the map and hit dungeons
 
 #define UNAFFILIATED (1<<15)
 

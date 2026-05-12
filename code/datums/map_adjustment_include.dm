@@ -8,3 +8,4 @@
 
 //#include "..\..\_maps\map_files\roguetest\map_adjustment_template.dm"
 #include "..\..\_maps\map_files\twoforts\map_adjustment_twoforts.dm"
+#include "..\..\_maps\map_files\kingsworld\map_adjustment_kingsworld.dm"
