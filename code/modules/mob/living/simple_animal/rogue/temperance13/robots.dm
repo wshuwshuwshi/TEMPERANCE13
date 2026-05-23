@@ -139,6 +139,16 @@
 	maxHealth = 1300
 	health = 1300
 
+/mob/living/simple_animal/hostile/rogue/robot/coward
+	name = "REPLICA"
+	desc = "A small cowering construct. It doesn't have any weapons."
+	icon_state = "WU-scout"
+	icon_living = "WU-scout"
+	icon_dead = "WU-scout_dead"
+	attack_verb_continuous = "flails"
+	attack_verb_simple = "flail"
+	canparry = FALSE
+	ai_controller = /datum/ai_controller/mudcrab
 
 /mob/living/simple_animal/hostile/rogue/robot/get_sound(input)
 	switch(input)
@@ -150,4 +160,3 @@
 			return pick('sound/vo/mobs/robots/death1.ogg','sound/vo/mobs/robots/death2.ogg')
 		if("idle")
 			return pick('sound/vo/mobs/robots/idle1.ogg','sound/vo/mobs/robots/idle2.ogg','sound/vo/mobs/robots/idle3.ogg','sound/vo/mobs/robots/idle4.ogg')
-
