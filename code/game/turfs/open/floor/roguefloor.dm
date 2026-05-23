@@ -400,6 +400,17 @@
 /turf/open/floor/rogue/grass/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
 
+/turf/open/floor/rogue/grassfake
+	name = "fake grass"
+	desc = "a filthy mat of rubbery tendrils."
+	icon_state = "fakegrass"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/grassland.wav'
+
 /turf/open/floor/rogue/dirt/ambush
 	name = "dirt"
 	desc = "The dirt is pocked with the scars of countless wars."
