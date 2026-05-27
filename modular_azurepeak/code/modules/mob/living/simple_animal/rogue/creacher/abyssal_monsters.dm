@@ -1,12 +1,13 @@
 /mob/living/simple_animal/hostile/rogue/dreamfiend
 	icon = 'modular_hearthstone/icons/mob/abyssal_small.dmi'
-	name = "minor dream fiend"
+	name = "ABSTRACTION"
+	desc = "Looking at it brings foreign thoughts to your mind, a circle of red, a square of white, a soft hand."
 	icon_state = "dreamfiend"
 	icon_living = "dreamfiend"
 	icon_dead = "dreamfiend"
 
-	//Not a crab, but mossbacks respect other creations of Abyssor...
-	faction = list("dream", "crabs")
+	//The undead are summoned by the same matron whose broken mind spilled these things.
+	faction = list("dream", "undead")
 	attack_sound = list('modular_azurepeak/sound/mobs/abyssal/abyssal_attack.ogg','modular_azurepeak/sound/mobs/abyssal/abyssal_attack2.ogg')
 
 	base_intents = list(/datum/intent/simple/bite)
@@ -33,7 +34,8 @@
 
 /mob/living/simple_animal/hostile/rogue/dreamfiend/major
 	icon = 'modular_hearthstone/icons/mob/abyssal_medium.dmi'
-	name = "major dream fiend"
+	name = "CONCEPT"
+	desc = "It doesn't want to hurt you. It has a flower. He plucked it just for you."
 	pixel_x = -4
 
 	STACON = 15
@@ -51,8 +53,8 @@
 
 /mob/living/simple_animal/hostile/rogue/dreamfiend/ancient
 	icon = 'modular_hearthstone/icons/mob/abyssal_large.dmi'
-	name = "ancient dream fiend"
-	desc = "A truly horrifying creature. It makes you dizzy just looking at it."
+	name = "MEMORY"
+	desc = "You don't want to remember. It hurts. Your heart aches with grief."
 	pixel_x = -16
 
 	health = ANCIENT_DREAMFIEND_HEALTH
@@ -229,3 +231,43 @@
 /mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound
 	attack_sound = list('modular_azurepeak/sound/mobs/abyssal/abyssal_attack.ogg','modular_azurepeak/sound/mobs/abyssal/abyssal_attack2.ogg')
 	ai_controller = /datum/ai_controller/dreamfiend_unbound_ancient
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/unbound/t13
+	name = "ABSTRACTION"
+	desc = "Looking at it brings foreign thoughts to your mind, a circle of red, a square of white, a soft hand."
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/unbound/t13/death()
+	qdel(src)
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/major/unbound/t13
+	name = "CONCEPT"
+	desc = "It doesn't want to hurt you. It has a flower. He plucked it just for you."
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/major/unbound/t13/death()
+	qdel(src)
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13
+	name = "MEMORY"
+	desc = "You don't want to remember. It hurts. Your heart aches with grief."
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/death()
+	new /obj/item/underworld/coin/notracking/t13(loc)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/a
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/a/death()
+	new /obj/item/underworld/coin/notracking/t13/a(loc)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/b
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/b/death()
+	new /obj/item/underworld/coin/notracking/t13/b(loc)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/c
+
+/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound/t13/c/death()
+	new /obj/item/underworld/coin/notracking/t13/c(loc)
+	qdel(src)

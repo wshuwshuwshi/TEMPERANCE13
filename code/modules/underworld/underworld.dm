@@ -138,4 +138,20 @@ GLOBAL_VAR_INIT(underworld_coins, 0)
 		for(var/obj/effect/landmark/underworldcoin/B in GLOB.landmarks_list)
 			new /obj/item/underworld/coin(B.loc)
 
+/obj/item/underworld/coin/notracking/t13
+	name = "RECOLLECTION"
 
+/obj/item/underworld/coin/notracking/t13/attack_self(mob/user)
+	to_chat(user, "<span class='smallred'>There's a bird singing, right there, beneath the sun, whose golden rays warm your skin. You're crying. Something's wrong. Why can't you remember what..?</span>")
+
+/obj/item/underworld/coin/notracking/t13/a
+/obj/item/underworld/coin/notracking/t13/a/attack_self(mob/user)
+	to_chat(user, "<span class='smallred'>It's an aching, deep within your bones. Bug bites marr your skin. It itches. Every shell cratering the ground itches. There didn't use to be so many bugs out...</span>")
+
+/obj/item/underworld/coin/notracking/t13/b
+/obj/item/underworld/coin/notracking/t13/b/attack_self(mob/user)
+	to_chat(user, "<span class='smallred'>A blanket on the ground. A wicker basket atop it. Sparse food spread about. Shared between you and the one you love. He could have been so happy. ..</span>")
+
+/obj/item/underworld/coin/notracking/t13/c
+/obj/item/underworld/coin/notracking/t13/c/attack_self(mob/user)
+	to_chat(user, "<span class='smallred'>He's reaching for you. You're tearing him apart, but he's still trying. He wants you to know he loves you. Even with the bug bites. Even as you unmake him...</span>")
