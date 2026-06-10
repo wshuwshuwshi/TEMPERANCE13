@@ -1,8 +1,13 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
+	reagent_flags = NO_REACT
+	icon_state = "general"
 	list_reagents = list(/datum/reagent/medicine/healthpot = 48)
 
+
 /obj/item/reagent_containers/glass/bottle/rogue/healthpotnew
+	reagent_flags = NO_REACT
+	icon_state = "general"
 	list_reagents = list(/datum/reagent/medicine/stronghealth = 48)
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
@@ -122,15 +127,19 @@
 // WINES - Expensive, Nobleblooded
 /obj/item/reagent_containers/glass/bottle/rogue/wine
 	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 48)
-	desc = "A bottle that contains a generic red-wine, likely from Raneshen. It has a red-clay cork-seal."
+	desc = "A bottle that contains decent, Imperial wine."
+	icon_state = "wine"
+	reagent_flags = NO_REACT
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/sourwine = 48)
-	desc = "A bottle that contains a Grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
+	desc = "A bottle that contains an Arderlan classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 48)
-	desc = "A bottle with the Otavan Merchant Guild cork-seal. This one appears to be labelled as a relatively young red-wine from the coinlord state."
+	desc = "Kalarian red-wine. It's cheap."
+	icon_state = "wine"
+	reagent_flags = NO_REACT
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
 	list_reagents = list(/datum/reagent/consumable/ethanol/whitewine = 48)
@@ -142,7 +151,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 	list_reagents = list(/datum/reagent/consumable/ethanol/elfblue = 48)
-	desc = "A bottle gilded with a golden cork-seal. This is the legendary Valmora Blue from the Vineyard of Valmora, headed by a sainted Dark-Elf swordsmaster. This bottle would swoon Gods over!"
+	desc = "A corked bottle containing alcohol from the LOVE MACHINE. As potent as it is expensive, so go easy."
 
 //AZURE DRINKS
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk

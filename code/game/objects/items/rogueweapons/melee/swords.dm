@@ -765,7 +765,7 @@
 	icon_state = "decsaber"
 	sheathe_icon = "decsaber"
 	sellprice = 140
-
+	
 //Unique church sword - slightly better than regular sabre due to falx chop.
 /obj/item/rogueweapon/sword/sabre/nockhopesh
 	name = "moonlight khopesh"
@@ -1372,7 +1372,7 @@
 
 /obj/item/rogueweapon/sword/rapier/grandmaster
 	name = "cane blade"
-	desc = "A steel blade with a gold handle, intended to be concealed inside of a cane, bears the visage of a vulture on its pommel."
+	desc = "A steel blade with a gold handle. Bears the visage of a vulture on its pommel."
 	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "caneblade"
 	sheathe_icon = "caneblade"
@@ -1393,3 +1393,8 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	minstr = 5
 	wdefense = 4
+
+/obj/item/rogueweapon/sword/sabre/dec/displacedhier
+	name = "heirloom sabre"
+	desc = "Let this blade find its way into his black heart."
+	color = "#888888"
