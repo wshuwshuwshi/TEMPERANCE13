@@ -8,6 +8,7 @@
 	map_file_name = "picnic.dmm"
 	realm_name = "Nightmare"
 	slot_adjust = list(
+		/datum/job/roguetown/pilgrim = 10,
 	)
 	title_adjust = list(
 		/datum/job/roguetown/pilgrim = list(display_title = "Survivor")
