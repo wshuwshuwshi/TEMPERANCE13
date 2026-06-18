@@ -820,6 +820,12 @@
 	. = ..()
 	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 
+/turf/open/floor/rogue/blocks/platform/magicrock
+	icon_state = "oldcobblerock"
+	name = "torn stone"
+	desc = "A chunk of floating rock."
+	max_integrity = 1600
+
 /turf/open/floor/rogue/greenstone
 	icon_state = "greenstone"
 	footstep = FOOTSTEP_STONE
@@ -1863,7 +1869,7 @@
 	landsound = 'sound/gore/flesh_eat_05.ogg'
 
 
-//yeah so ur gonna have to create the actual bitey mouths (in barbedwire.dm). srry im just a lazy pos 
+//yeah so ur gonna have to create the actual bitey mouths (in barbedwire.dm). srry im just a lazy pos
 /turf/open/floor/rogue/fleshfloor/mouths
 	icon_state = "flesh_floor-3"
 	landsound = 'sound/foley/splatty.ogg'
