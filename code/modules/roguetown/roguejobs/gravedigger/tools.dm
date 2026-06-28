@@ -67,7 +67,7 @@
 /obj/item/rogueweapon/shovel/attack_turf(turf/T, mob/living/user)
 	user.changeNext_move(user.used_intent.clickcd)
 	if(user.used_intent.type == /datum/intent/shovelscoop)
-		if(istype(T, /turf/open/floor/rogue/dirt))
+		if(istype(T, /turf/open/floor/rogue/dirt) || istype(T, /turf/open/floor/rogue/nmdirt))
 			var/turf/open/floor/rogue/dirt/D = T
 			if(heldclod)
 				if(D.holie && D.holie.stage < 4)
@@ -82,8 +82,10 @@
 				if(D.holie)
 					D.holie.attackby(src, user)
 				else
-					if(istype(T, /turf/open/floor/rogue/dirt/road))
+					if(istype(T, /turf/open/floor/rogue/dirt/road) || istype(T, /turf/open/floor/rogue/nmdirt/road))
 						new /obj/structure/closet/dirthole(T)
+					if(istype(T, /turf/open/floor/rogue/nmdirt))
+						T.ChangeTurf(/turf/open/floor/rogue/nmdirt/road, flags = CHANGETURF_INHERIT_AIR)
 					else
 						T.ChangeTurf(/turf/open/floor/rogue/dirt/road, flags = CHANGETURF_INHERIT_AIR)
 					heldclod = new(src)

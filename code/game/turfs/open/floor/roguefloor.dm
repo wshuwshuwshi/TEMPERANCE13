@@ -578,6 +578,8 @@
 	landsound = 'sound/foley/jumpland/dirtland.wav'
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/turf/open/floor/rogue/dirt,
+						/turf/open/floor/rogue/nmdirt,
+						/turf/open/floor/rogue/nmdirt/cracked,
 						/turf/open/floor/rogue/grass,
 						/turf/open/floor/rogue/grassred,
 						/turf/open/floor/rogue/grassyel,
@@ -595,30 +597,119 @@
 /turf/open/floor/rogue/dirt/road/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
 
-/turf/open/floor/rogue/dirt/nightmare
+/turf/open/floor/rogue/nmdirt
 	name = "ash"
 	desc = "Soft, loose powder, blowing in the wind. Smells like burnt hair"
 	icon_state = "nmdirt"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+	slowdown = 2
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/open/floor/rogue/grass,
+						/turf/open/floor/rogue/grassred,
+						/turf/open/floor/rogue/grassyel,
+						/turf/open/floor/rogue/grasscold,
+						/turf/open/floor/rogue/snowpatchy,
+						/turf/open/floor/rogue/snow,
+						/turf/open/floor/rogue/snowrough,
+						/turf/open/floor/rogue/AzureSand)
 	neighborlay = "nmdirtedge"
+	var/obj/structure/closet/dirthole/holie
+	var/dirt_amt = 2
 
-/turf/open/floor/rogue/dirt/nightmare/cracked
+/turf/open/floor/rogue/nmdirt/get_slowdown(mob/user)
+	. = ..()
+	var/negate_slowdown = FALSE
+
+	for(var/obj/item/stick in user.held_items)
+		if(stick.walking_stick && !stick.wielded && !user.cmode)
+			negate_slowdown = TRUE
+			break
+
+	if(HAS_TRAIT(user, TRAIT_LONGSTRIDER))
+		negate_slowdown = TRUE
+
+	if(negate_slowdown)
+		. -= 2
+	return max(., 0)
+
+/turf/open/floor/rogue/nmdirt/attack_right(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(L.stat != CONSCIOUS)
+			return
+		var/obj/item/I = new /obj/item/natural/dirtclod(src)
+		if(L.put_in_active_hand(I))
+			L.visible_message(span_warning("[L] picks up some dirt."))
+			dirt_amt--
+			if(dirt_amt <= 0)
+				src.ChangeTurf(/turf/open/floor/rogue/nmdirt/road, flags = CHANGETURF_INHERIT_AIR)
+		else
+			qdel(I)
+	.=..()
+
+/turf/open/floor/rogue/nmdirt/Destroy()
+	if(holie)
+		QDEL_NULL(holie)
+	return ..()
+
+/turf/open/floor/rogue/nmdirt/cardinal_smooth(adjacencies)
+	roguesmooth(adjacencies)
+
+/turf/open/floor/rogue/nmdirt/Initialize()
+	dir = pick(GLOB.cardinals)
+	. = ..()
+
+
+/turf/open/floor/rogue/nmdirt/cracked
 	name = "cracked ash"
 	desc = "Once wet, now cracking apart. Smells like wet dog."
 	icon_state = "nmdirt_c"
 	neighborlay = "nmdirt_cedge"
+	canSmoothWith = list(/turf/open/floor/rogue/nmdirt,
+						/turf/open/floor/rogue/grass,
+						/turf/open/floor/rogue/grassred,
+						/turf/open/floor/rogue/grassyel,
+						/turf/open/floor/rogue/grasscold,
+						/turf/open/floor/rogue/snowpatchy,
+						/turf/open/floor/rogue/snow,
+						/turf/open/floor/rogue/snowrough,
+						/turf/open/floor/rogue/AzureSand)
+	slowdown = 1
 
-/turf/open/floor/rogue/dirt/ambush/nightmare
+/turf/open/floor/rogue/nmdirt/ambush
 	name = "ash"
 	desc = "Soft, loose powder, blowing in the wind. Smells like burnt hair"
 	icon_state = "nmdirt"
 	neighborlay = "nmdirtedge"
 
-/turf/open/floor/rogue/dirt/road/nightmare
+/turf/open/floor/rogue/nmdirt/road
 	name = "ash"
 	desc = "Soft powder, packed down by countless steps."
 	icon_state = "nmroad"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/open/floor/rogue/dirt,
+						/turf/open/floor/rogue/nmdirt,
+						/turf/open/floor/rogue/grass,
+						/turf/open/floor/rogue/grassred,
+						/turf/open/floor/rogue/grassyel,
+						/turf/open/floor/rogue/grasscold,
+						/turf/open/floor/rogue/snowpatchy,
+						/turf/open/floor/rogue/snow,
+						/turf/open/floor/rogue/snowrough,
+						/turf/open/floor/rogue/AzureSand,)
 	neighborlay = "nmroadedge"
-
+	slowdown = 0
 
 /turf/open/floor/rogue/sand
 	name = "sand"
@@ -766,7 +857,7 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/dirtland.wav'
 	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/turf/open/floor/rogue/dirt/road,/turf/open/floor/rogue/dirt)
+	canSmoothWith = list(/turf/open/floor/rogue/dirt/road,/turf/open/floor/rogue/dirt, )
 	neighborlay = "lavedge"
 
 /turf/open/floor/rogue/volcanic/Initialize()
