@@ -346,7 +346,7 @@
 
 /turf/open/floor/rogue/grassyel
 	name = "yellow grass"
-	desc = "Grass, blessed by Astrata's light."
+	desc = "Grass, dead or dying without sunlight."
 	icon_state = "grass_yel"
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_GRASS
@@ -594,6 +594,31 @@
 
 /turf/open/floor/rogue/dirt/road/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
+
+/turf/open/floor/rogue/dirt/nightmare
+	name = "ash"
+	desc = "Soft, loose powder, blowing in the wind. Smells like burnt hair"
+	icon_state = "nmdirt"
+	neighborlay = "nmdirtedge"
+
+/turf/open/floor/rogue/dirt/nightmare/cracked
+	name = "cracked ash"
+	desc = "Once wet, now cracking apart. Smells like wet dog."
+	icon_state = "nmdirt_c"
+	neighborlay = "nmdirt_cedge"
+
+/turf/open/floor/rogue/dirt/ambush/nightmare
+	name = "ash"
+	desc = "Soft, loose powder, blowing in the wind. Smells like burnt hair"
+	icon_state = "nmdirt"
+	neighborlay = "nmdirtedge"
+
+/turf/open/floor/rogue/dirt/road/nightmare
+	name = "ash"
+	desc = "Soft powder, packed down by countless steps."
+	icon_state = "nmroad"
+	neighborlay = "nmroadedge"
+
 
 /turf/open/floor/rogue/sand
 	name = "sand"
