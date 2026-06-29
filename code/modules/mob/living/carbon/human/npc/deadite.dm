@@ -4,7 +4,7 @@
 	npc_jump_chance = 0
 	rude = FALSE // don't taunt people as a deadite
 	tree_climber = FALSE // or climb trees
-	dodgetime = 8 
+	dodgetime = 8
 	flee_in_pain = FALSE
 	ambushable = FALSE
 	wander = TRUE
@@ -14,8 +14,6 @@
 	. = ..()
 	var/species = list(
 		/datum/species/human/northern,
-		/datum/species/elf/wood,
-		/datum/species/tieberian,
 	)
 
 	set_species(pick(species))
@@ -97,7 +95,7 @@
 /mob/living/carbon/human/proc/try_do_deadite_bite(mob/living/victim)
 	if(!src || stat >= DEAD)
 		return FALSE
-	
+
 	var/obj/item/grabbing/bite/bite = get_item_by_slot(SLOT_MOUTH)
 	if(istype(bite))
 		// 50% chance to continue biting if already started
