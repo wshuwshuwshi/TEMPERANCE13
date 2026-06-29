@@ -63,9 +63,46 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 	mask = /obj/item/clothing/mask/rogue/skullmask
 
+/obj/effect/mob_spawn/human/nmcorpse
+	mob_type = /mob/living/carbon/human/species/human/northern
 
+/obj/effect/mob_spawn/human/nmcorpse/farmhouse
+	outfit = /datum/outfit/farmcorpse
 
+/datum/outfit/farmcorpse
+	head = /obj/item/clothing/head/roguetown/armingcap
+	mask = /obj/item/clothing/head/roguetown/roguehood
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	belt = /obj/item/storage/belt/rogue/leather/rope
+	beltr = /obj/item/storage/keyring/soilson
+	pants = /obj/item/clothing/under/roguetown/tights/random
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 
+/obj/effect/mob_spawn/human/nmcorpse/tavernpatron
+	brute_damage = 1000
+	outfit = /datum/outfit/patroncorpse
 
+/datum/outfit/patroncorpse
+	armor = /obj/item/clothing/suit/roguetown/armor/armordress
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/white
+	pants = /obj/item/clothing/under/roguetown/tights/random
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 
+/obj/effect/mob_spawn/human/nmcorpse/tavernkitchen
+	brute_damage = 1000
+	outfit = /datum/outfit/cookcorpse
 
+/datum/outfit/cookcorpse
+	belt = /obj/item/storage/belt/rogue/leather
+	beltl = /obj/item/roguekey/tavern
+	backr = /obj/item/storage/backpack/rogue/satchel
+	cloak = /obj/item/clothing/cloak/apron/cook
+	head = /obj/item/clothing/head/roguetown/cookhat
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
