@@ -106,3 +106,35 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
+
+/obj/effect/mob_spawn/animal/gotedead
+	name = "Starved Goat"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/rogue/goat
+	flavour_text = "The gaunt carcass of a female goat, curled around her kid."
+
+/obj/effect/mob_spawn/animal/gotemaledead
+	name = "Starved Goatmale"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
+	flavour_text = "An emaciated corpse of a goat."
+
+/obj/effect/mob_spawn/animal/goteletdead
+	name = "Starved Goatlet"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet
+	flavour_text = "The fragile looking corpse of a kid."
+
+/obj/effect/mob_spawn/animal/bull
+	name = "Starved Bull"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/rogue/bull
+	flavour_text = "A near skeletal corpse of what was once surely a strong beast."
+
+/obj/effect/mob_spawn/animal/cow
+	name = "Starved Cow"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/rogue/cow
+	flavour_text = "A frail looking cow, still as the hay around her."
+
+/obj/effect/mob_spawn/animal/saigadead
+	name = "Mauled Saiga"
+	mob_type = /mob/living/simple_animal/hostile/retaliate/rogue/saiga
+	flavour_text = "The half devoured remnants of a saiga doe."
+	brute_damage = 500
+
